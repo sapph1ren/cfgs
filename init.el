@@ -3,7 +3,6 @@
 (setq package-gnupghome-dir nil)
 (setq package-check-signature nil)
 
-;; Делаем так, чтобы поиск внутри команд не зависел от регистра
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
@@ -91,3 +90,4 @@
 (global-set-key (kbd "<backtab>") 'indent-rigidly-left-to-tab-stop)
 (setq indent-tabs-mode nil)
 (setq tab-width 4)        
+
