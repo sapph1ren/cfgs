@@ -3,6 +3,7 @@
 (setq package-gnupghome-dir nil)
 (setq package-check-signature nil)
 
+;; Делаем так, чтобы поиск внутри команд не зависел от регистра
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
@@ -53,10 +54,10 @@
 (global-set-key (kbd "C-o") 'find-file)
 
 (global-set-key(kbd "C-g") 'goto-line)(global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-q") 'kill-current-buffer)
+(global-set-key (kbd "C-q") 'delete-window)
 
 (global-set-key (kbd "C-b") 'ibuffer)
-(global-set-key (kbd "<C-tab>") 'other-window)
+(global-set-key (kbd "<C-S-tab>") 'other-window)
 (global-set-key (kbd "C-` ") 'execute-extended-command)
 (electric-pair-mode 1)
 (global-set-key (kbd "C-e") 'dired-jump)
@@ -88,6 +89,9 @@
 (global-set-key (kbd "<C-tab>") 'indent-rigidly-right-to-tab-stop)
 
 (global-set-key (kbd "<backtab>") 'indent-rigidly-left-to-tab-stop)
-(setq indent-tabs-mode nil)
-(setq tab-width 4)        
-
+;;(setq indent-tabs-mode nil)
+(setq-default tab-width 4)
+(global-set-key (kbd "<f5>") 'recompile)
+(setq compilation-ask-about-save nil) 
+(global-set-key (kbd "C-/") 'comment-dwim)
+(global-set-key (kbd "C-S-/") 'comment-line)
